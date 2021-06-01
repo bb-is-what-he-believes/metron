@@ -16,5 +16,3 @@ pub use quantity::Quantity;
 pub mod fmt;
 
 pub mod macros;
-#[cfg(feature = "paste")]
-pub use paste::paste;
