@@ -1,0 +1,27 @@
+[package]
+name = "quantity"
+version = "0.1.0"
+authors = ["A_Hibi <bb.is.what.he.believes@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[workspace]
+members = [
+    "crates/metron_core",
+    "crates/metron_macro",
+    "crates/metron_library",
+    "examples/basic",
+    "examples/use_lib",
+]
+
+[dependencies]
+metron_core = {path = "crates/metron_core" }
+metron_library = {path = "crates/metron_library" }
+
+[dev-dependencies]
+criterion = "0.3"
+
+[[bench]]
+name = "my_benchmark"
+harness = false
