@@ -43,11 +43,13 @@ macro_rules! def_unit {
     };
     ( $vis:vis $lhs:ty |* $rhs:ty => $mul:ident {
         $(from $from_body:tt ,)*
+        $(exp   $exp_body:tt ,)*
         $(sym   $sym_body:tt ,)?
     } ) => {
         $crate::def_unit!($vis $lhs |* $rhs => $mul;);
-        $( $crate::impl_unit_from!  ($mul, $from_body); )*
-        $( $crate::impl_fmt_symbol! ($mul,  $sym_body); )?
+        $( $crate::impl_unit_from!     ($mul, $from_body); )*
+        $( $crate::impl_unit_exp_scale!($mul,  $exp_body); )*
+        $( $crate::impl_fmt_symbol!    ($mul,  $sym_body); )?
     };
 
     ( $lhs:ty |/ $rhs:ty => $vis:vis $div:ident; ) => {
@@ -56,11 +58,13 @@ macro_rules! def_unit {
     };
     ( $lhs:ty |/ $rhs:ty => $vis:vis $div:ident {
         $(from $from_body:tt ,)*
+        $(exp   $exp_body:tt ,)*
         $(sym   $sym_body:tt ,)?
     } ) => {
         $crate::def_unit!($lhs |/ $rhs => $vis $div;);
-        $( $crate::impl_unit_from!  ($div, $from_body); )*
-        $( $crate::impl_fmt_symbol! ($div,  $sym_body); )?
+        $( $crate::impl_unit_from!     ($div, $from_body); )*
+        $( $crate::impl_unit_exp_scale!($div,  $exp_body); )*
+        $( $crate::impl_fmt_symbol!    ($div,  $sym_body); )?
     };
 }
 
