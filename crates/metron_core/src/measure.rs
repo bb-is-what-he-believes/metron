@@ -29,7 +29,10 @@ impl<N, M> Measure<N, M> {
             _measure: PhantomData,
         }
     }
-    pub fn into_inner(self) -> N {
+    pub fn num(&self) -> &N {
+        &self.num
+    }
+    pub fn into_num(self) -> N {
         self.num
     }
 }
@@ -219,37 +222,37 @@ mod tests {
         let one = SomeUnit::new(1);
         let two = SomeUnit::new(2);
         let three = one + two;
-        assert_eq!(3, three.into_inner());
+        assert_eq!(3, three.into_num());
     }
     #[test]
     fn sub() {
         let three = SomeUnit::new(3);
         let two = SomeUnit::new(2);
         let one = three - two;
-        assert_eq!(1, one.into_inner());
+        assert_eq!(1, one.into_num());
     }
     #[test]
     fn mul_num() {
         let two = SomeUnit::new(2);
         let three = 3;
         let six = two * three;
-        assert_eq!(6, six.into_inner());
+        assert_eq!(6, six.into_num());
     }
     #[test]
     fn div_num() {
         let six = SomeUnit::new(6);
         let three = 3;
         let two = six / three;
-        assert_eq!(2, two.into_inner());
+        assert_eq!(2, two.into_num());
     }
     #[test]
     fn from() {
         let one = SomeUnit::from(1);
-        assert_eq!(1, one.into_inner());
+        assert_eq!(1, one.into_num());
     }
     #[test]
     fn into() {
         let one: SomeUnit<_> = 1.into();
-        assert_eq!(1, one.into_inner());
+        assert_eq!(1, one.into_num());
     }
 }
