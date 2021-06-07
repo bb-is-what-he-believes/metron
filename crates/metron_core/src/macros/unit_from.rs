@@ -4,7 +4,7 @@ macro_rules! impl_unit_from {
         $crate::impl_unit_from!( $unit_into, $unit_from =* $factor );
     };
     ( $unit_into:ty, ( $unit_from:ty =/ $factor:literal ) ) => {
-        $crate::impl_unit_from!( $unit_into:ty, $unit_from:ty =/ $factor:literal);
+        $crate::impl_unit_from!( $unit_into, $unit_from =/ $factor);
     };
     ( $unit_into:ty, ( $unit_from:ty => | $num:ident : $num_from:ty| -> $num_out:ty { $conv:expr } ) ) =>{
         $crate::impl_unit_from!( $unit_into, $unit_from => | $num : $num_from | -> $num_out { $conv });
