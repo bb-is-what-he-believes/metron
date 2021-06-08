@@ -141,7 +141,7 @@ where
 mod test {
     mod units {
         use crate::unit::scale::exp::{
-            ExponentialScale, ExponentialScaleDefault, ExponentialScaledUnit, Measure,
+            ExponentialScaleDefault, ExponentialScaledUnit,
         };
         use crate::Unit;
         use crate::{def_exp_scale, def_exp_scale_base, def_exp_scale_exp};
