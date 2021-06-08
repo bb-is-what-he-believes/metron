@@ -37,16 +37,16 @@ macro_rules! def_unit {
         $( $crate::impl_fmt_symbol!($unit_exp_name,  $sym_body); )?
     };
 
-    ( $vis:vis $lhs:ty |* $rhs:ty => $mul:ident; ) => {
+    ( $lhs:ty |* $rhs:ty => $vis:vis $mul:ident; ) => {
         $crate::def_unit!($vis $mul;);
         $crate::impl_unit_mul!($lhs |* $rhs => $mul);
     };
-    ( $vis:vis $lhs:ty |* $rhs:ty => $mul:ident {
+    ( $lhs:ty |* $rhs:ty => $vis:vis $mul:ident {
         $(from $from_body:tt ,)*
         $(exp   $exp_body:tt ,)*
         $(sym   $sym_body:tt ,)?
     } ) => {
-        $crate::def_unit!($vis $lhs |* $rhs => $mul;);
+        $crate::def_unit!($lhs |* $rhs => $vis $mul;);
         $( $crate::impl_unit_from!     ($mul, $from_body); )*
         $( $crate::impl_unit_exp_scale!($mul,  $exp_body); )*
         $( $crate::impl_fmt_symbol!    ($mul,  $sym_body); )?
