@@ -1,2 +1,2 @@
 # metron
-rust crate for unit of measure 
+utility crate for unit of measure 

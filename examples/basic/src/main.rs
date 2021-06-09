@@ -1,4 +1,5 @@
 metron_core::def_unit_measure!(some_unit::SomeUnit);
+// metron::def_unit_measure!(some_unit::SomeUnit);
 fn main() {
     use some_unit::SomeUnit;
     let lhs = SomeUnit::of(4);
