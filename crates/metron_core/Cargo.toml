@@ -3,8 +3,12 @@ name = "metron_core"
 version = "0.0.1"
 authors = ["A_Hibi <bb.is.what.he.believes@gmail.com>"]
 edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+description = "make easily your own measurement system of units"
+readme = "README.md"
+repository = "https://github.com/bbinber/metron/"
+license = "MIT OR Apache-2.0"
+keywords = ["units", "quantity", "measurement"]
+categories = ["science", "data-structures" ]
 [features]
 
 [dependencies]

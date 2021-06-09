@@ -87,9 +87,9 @@ mod test {
         use metron_core::def_measure;
         use std::ops::Mul;
         use std::fmt::{Debug, Formatter};
-        def_measure!(Metre: super::Metre,);
-        def_measure!(Radian: super::Radian,);
-        def_measure!(Feet: super::Feet,);
+        def_measure!(Metre  = super::Metre,);
+        def_measure!(Radian = super::Radian,);
+        def_measure!(Feet   = super::Feet,);
         type Percent<N, D> = metron_core::Measure<N, super::Percent<D>>;
 
         #[test]
