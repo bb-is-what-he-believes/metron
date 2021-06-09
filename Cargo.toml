@@ -3,6 +3,12 @@ name = "metron"
 version = "0.0.1"
 authors = ["A_Hibi <bb.is.what.he.believes@gmail.com>"]
 edition = "2018"
+description = "utility crate for unit of measure "
+readme = "README.md"
+repository = "https://github.com/bbinber/metron/"
+license = "MIT OR Apache-2.0"
+keywords = ["units", "quantity", "measurement"]
+categories = ["science", "data-structures" ]
 
 [workspace]
 members = [
