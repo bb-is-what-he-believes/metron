@@ -14,8 +14,8 @@ members = [
 ]
 
 [dependencies]
-metron_core = {path = "crates/metron_core" }
-metron_library = {path = "crates/metron_library" }
+metron_core = {version = "0.0.1", path = "crates/metron_core" }
+metron_library = {version = "0.0.1", path = "crates/metron_library" }
 
 [dev-dependencies]
 criterion = "0.3"

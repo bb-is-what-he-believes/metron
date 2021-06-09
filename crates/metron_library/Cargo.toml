@@ -11,4 +11,4 @@ keywords = ["units", "quantity", "measurement"]
 categories = ["science", "data-structures" ]
 
 [dependencies]
-metron_core = {path = "../metron_core"}
+metron_core = {version = "0.0.1", path = "../metron_core"}
